@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 
 import { Car } from '../model/car';
+import { CarsService } from '../services/cars.service';
 
 
 @Component({
@@ -12,14 +13,20 @@ import { Car } from '../model/car';
 export class CarsComponent implements OnInit {
 
   cars: Car[] = [
-    { _id: '1', name: 'CHEVROLET', category: 'SEDAN'}
+    {
+      _id: '1', name:'CHEVROLET', category: 'SEDAN'
+    }
   ];
   displayedColumns = ['name', 'category'];
 
-  constructor() { // this.cars = []/
+ 
+
+  constructor(private carsService: CarsService) {
+
+    //this.carsService = new CarsService();//
+    //this.cars = this.carsService.list(); //
+
   }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 }
