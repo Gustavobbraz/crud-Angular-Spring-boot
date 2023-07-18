@@ -2,7 +2,7 @@
 @include mat-core();
 
 /* DEFINE AS CORES DO TOOL BAR*/
-$custom-app-primary: mat-palette($mat-yellow);
+$custom-app-primary: mat-palette($mat-blue);
 $custom-app-secondaty: mat-palette($mat-indigo, A200, A400, 700);
 $custom-app-warn: mat-palette($mat-red);
 
