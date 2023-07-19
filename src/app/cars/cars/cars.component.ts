@@ -15,7 +15,7 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class CarsComponent implements OnInit {
 
-  cars: Observable<Car[]>;
+  cars$: Observable<Car[]>;
 
   displayedColumns = ['name', 'category'];
 
@@ -23,9 +23,9 @@ export class CarsComponent implements OnInit {
 
   constructor(private carsService: CarsService) {
 
-      this.cars = this.carsService.list();
+      this.cars$ = this.carsService.list();
 
-    
+
 }
 
   ngOnInit(): void {}
