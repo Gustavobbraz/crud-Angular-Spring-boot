@@ -3,6 +3,9 @@ import { MatCardModule } from '@angular/material/card';
 
 import { Car } from '../model/car';
 import { CarsService } from '../services/cars.service';
+import { Observable } from 'rxjs/internal/Observable';
+
+
 
 
 @Component({
@@ -12,21 +15,18 @@ import { CarsService } from '../services/cars.service';
 })
 export class CarsComponent implements OnInit {
 
-  cars: Car[] = [
-    {
-      _id: '1', name:'CHEVROLET', category: 'SEDAN'
-    }
-  ];
+  cars: Observable<Car[]>;
+
   displayedColumns = ['name', 'category'];
 
- 
+
 
   constructor(private carsService: CarsService) {
 
-    //this.carsService = new CarsService();//
-    //this.cars = this.carsService.list(); //
+      this.cars = this.carsService.list();
 
-  }
+    
+}
 
   ngOnInit(): void {}
 }
