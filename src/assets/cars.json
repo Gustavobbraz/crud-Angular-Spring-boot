@@ -1,7 +1,7 @@
 [
   {
-
-    "_id": "1", "name":"CHEVROLET", "category": "SEDAN"
-
+    "_id": 1,
+    "name": "CHEVROLET",
+    "category": "SEDAN"
   }
 ]

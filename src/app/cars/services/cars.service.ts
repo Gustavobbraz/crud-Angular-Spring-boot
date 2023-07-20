@@ -18,7 +18,7 @@ export class CarsService {
     return this.httpClient.get<Car[]>(this.API)
     .pipe(
       rxjs.first(),
-      rxjs.delay(5000),
+      rxjs.delay(2000),
       rxjs.tap(cars => console.log(cars))
     );
   }

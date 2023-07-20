@@ -20,7 +20,10 @@
       <!-- category column -->
       <ng-container matColumnDef="category">
         <th mat-header-cell *matHeaderCellDef> Categoria </th>
-        <td mat-cell *matCellDef="let car"> {{ car.category}} </td>
+        <td mat-cell *matCellDef="let car"> {{ car.category }}
+          <mat-icon aria-hidden="false" aria-label="Categoria do Veiculo">{{ car.category | category }}</mat-icon>
+
+        </td>
       </ng-container>
 
 
