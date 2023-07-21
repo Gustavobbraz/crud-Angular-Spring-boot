@@ -10,7 +10,7 @@ import * as rxjs from 'rxjs';
 })
 export class CarsService {
 
-  	private readonly API = '/assets/cars.json';
+  	private readonly API = '/api/cars';
 
     constructor(private httpClient: HttpClient) { }
 

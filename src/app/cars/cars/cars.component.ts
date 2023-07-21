@@ -20,7 +20,7 @@ export class CarsComponent implements OnInit {
 
   cars$: Observable<Car[]>;
 
-  displayedColumns = ['name', 'category'];
+  displayedColumns = ['_id','name', 'category', 'manufacturer'];
 
 
 
