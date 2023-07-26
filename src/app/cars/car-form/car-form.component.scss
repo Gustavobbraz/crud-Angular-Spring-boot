@@ -1,0 +1,32 @@
+*
+{
+
+}
+
+.mat-toolbar{
+  color: rgb(255, 254, 254);
+  background-color: rgb(89, 72, 240);
+}
+
+mat-card {
+  max-width:80%;
+  margin:2em auto;
+  text-align: center;
+
+}
+
+.full-width{
+  width:100%;
+  margin: auto;
+  text-align: center;
+}
+
+.min-width {
+  width: 100%;
+  min-width: 150px;
+}
+
+.full-width2
+{
+  width:100%;
+}

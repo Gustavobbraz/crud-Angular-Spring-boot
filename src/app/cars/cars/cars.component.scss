@@ -1,8 +1,15 @@
 
 
-table {
+.title-list{
+
   width: 100%;
-  background-color: rgb(224, 223, 226);
+
+}
+
+mat-toolbar{
+    background-color: rgb(4, 94, 228) ;
+    color: rgb(255, 254, 254);
+    width: 100%;
 }
 
 .loading-spinner{

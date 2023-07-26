@@ -7,6 +7,7 @@ import {MatTableModule} from '@angular/material/table';
 import { CarsRoutingModule } from '../cars-routing.module';
 import { CarsComponent } from './cars.component';
 import { SharedModule } from '../../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SharedModule } from '../../shared/shared.module';
     MatToolbarModule,
     MatTableModule,
     CarsRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class CarsModule { }

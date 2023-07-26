@@ -6,6 +6,7 @@ import { Car } from '../model/car';
 import { CarsService } from '../services/cars.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from '../../shared/components/error-dialog/error-dialog.component';
+import { Router } from '@angular/router';
 
 
 
@@ -20,14 +21,15 @@ export class CarsComponent implements OnInit {
 
   cars$: Observable<Car[]>;
 
-  displayedColumns = ['_id','name', 'category', 'manufacturer'];
+  displayedColumns = ['_id','name', 'category', 'manufacturer','fabricationdate', 'actions' ];
 
 
 
 
   constructor(
     private carsService: CarsService,
-    public dialog: MatDialog) {
+    public dialog: MatDialog,
+    private router: Router) {
 
       this.cars$ = this.carsService.list()
       .pipe(
@@ -47,8 +49,11 @@ onError(errorMsg: string) {
 
 
   ngOnInit(): void {}
-}
-function openDialog() {
+
+  onAdd() {
+    this.router.navigate(['/cars/new']);
+  }
 
 }
+
 

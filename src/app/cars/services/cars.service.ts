@@ -21,5 +21,10 @@ export class CarsService {
       rxjs.delay(2000),
       rxjs.tap(cars => console.log(cars))
     );
+
+    }
+    save(record: Car) {
+       return this.httpClient.post<Car>(this.API, record);
+
   }
 }
