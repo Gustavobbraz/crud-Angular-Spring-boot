@@ -6,16 +6,18 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { CarsRoutingModule } from './cars-routing.module';
-import { CarsComponent } from './cars/cars.component';
+import { CarsComponent } from './containers/cars/cars.component';
 import { SharedModule } from "../shared/shared.module";
 import { ReactiveFormsModule } from '@angular/forms';
-import { CarFormComponent } from './car-form/car-form.component';
+import { CarFormComponent } from './containers/cars/car-form/car-form.component';
+import { CarsListComponent } from './components/cars-list/cars-list.component';
 
 
 @NgModule({
     declarations: [
         CarsComponent,
-        CarFormComponent
+        CarFormComponent,
+        CarsListComponent
 
     ],
     imports: [

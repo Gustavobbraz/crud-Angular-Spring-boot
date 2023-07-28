@@ -3,5 +3,5 @@ export interface Car {
   name: string;
   category: string;
   manufacturer: string;
-  fabricationdate: String;
+  fabricationdate: string;
 }

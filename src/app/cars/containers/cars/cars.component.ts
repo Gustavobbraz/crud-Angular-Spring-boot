@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { catchError, of } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 
-import { Car } from '../model/car';
-import { CarsService } from '../services/cars.service';
+import { Car } from '../../model/car';
+import { CarsService } from '../../services/cars.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ErrorDialogComponent } from '../../shared/components/error-dialog/error-dialog.component';
-import { Router } from '@angular/router';
+import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -17,11 +17,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./cars.component.scss']
 })
 export class CarsComponent implements OnInit {
-  [x: string]: any;
+
 
   cars$: Observable<Car[]>;
 
-  displayedColumns = ['_id','name', 'category', 'manufacturer','fabricationdate', 'actions' ];
+
 
 
 
@@ -29,7 +29,8 @@ export class CarsComponent implements OnInit {
   constructor(
     private carsService: CarsService,
     public dialog: MatDialog,
-    private router: Router) {
+    private router: Router,
+    private route: ActivatedRoute) {
 
       this.cars$ = this.carsService.list()
       .pipe(
@@ -48,11 +49,18 @@ onError(errorMsg: string) {
 }
 
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+}
 
   onAdd() {
-    this.router.navigate(['/cars/new']);
+    this.router.navigate(['new'], {relativeTo: this.route})
   }
+
+  onEdit(car: Car){
+    this.router.navigate(['edit', car._id], { relativeTo: this.route});
+  }
+
 
 }
 
